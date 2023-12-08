@@ -54,19 +54,28 @@ body {
   margin: 0;
   outline:none;
   border:none;
+  background-color: transparent;
 }
 
-.css-v4u5dn-MuiInputBase-root-MuiInput-root:after {
-  border-color:#97D28B;
-}
+
 
 label+.css-v4u5dn-MuiInputBase-root-MuiInput-root {
   margin: 0;
 }
 
+.css-1x51dt5-MuiInputBase-input-MuiInput-input {
+  border-bottom: 2px solid #97D28B;
+  padding-bottom: 8px;
+}
+
+.css-1x51dt5-MuiInputBase-input-MuiInput-input:invalid {
+  border-bottom: 2px solid #D28B8B;
+}
+
 textarea {
   outline: none;
   padding: 0;
+  background-color: transparent;
 }
 
 input {

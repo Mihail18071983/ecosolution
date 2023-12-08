@@ -18,7 +18,7 @@ const callItems = [
 
 export default function ContactUs() {
   return (
-    <section>
+    <section className="pb-[32px]">
       <div className="container">
         <h2 className="mb-6 text-center font-oswald text-28px uppercase leading-none">
           Contact us

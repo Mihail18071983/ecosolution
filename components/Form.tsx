@@ -4,7 +4,7 @@ import React from "react";
 
 import { useForm, SubmitHandler } from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
-import { Input, FormControl, FormLabel, Button } from "@mui/material";
+import { Input, TextField, FormControl, FormLabel, Button } from "@mui/material";
 import { TextareaAutosize } from "@mui/base/TextareaAutosize";
 import EastIcon from "@mui/icons-material/East";
 import { ColorRing } from "react-loader-spinner";
@@ -66,10 +66,10 @@ export default function Form() {
   return (
     <>
       <form
-        className=" flex flex-col pb-9 pl-3 pr-3 pt-9"
+        className=" bg-background-color flex flex-col pb-9 pl-3 pr-3 pt-9"
         onSubmit={handleSubmit(onSubmit)}
       >
-        <div className=" mb-8 flex flex-col gap-8">
+        <div className=" mb-8 flex flex-col gap-7">
           {formData.map((item) => {
             return (
               <FormControl
@@ -84,9 +84,10 @@ export default function Form() {
                 >
                   {item.title}
                 </FormLabel>
-                <Input
-                  className="border-b-hover-text-color pb-2 font-firaSans text-18px leading-none -tracking-normal"
+                <TextField
+                  className="bg-transparent border-b-hover-text-color font-firaSans text-18px leading-none -tracking-normal "
                   placeholder={item.placeholder}
+                  variant="standard"
                   required
                   type={item.type}
                   id={item.name}
@@ -111,7 +112,7 @@ export default function Form() {
           })}
         </div>
 
-        <FormControl fullWidth variant="standard" className="mb-2">
+        <FormControl fullWidth variant="standard" className="mb-3">
           <FormLabel
             className="mb-2 font-firaSans text-16px leading-none tracking-[-0.64px]"
             htmlFor="message"
