@@ -1,8 +1,10 @@
+
 import type { Metadata } from "next";
 import { Fira_Sans, Oswald } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
+import { Toaster } from 'sonner'
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -35,6 +37,7 @@ export default function RootLayout({
         <Header />
         <main className="main">{children}</main>
         <Footer />
+        <Toaster richColors position="top-center"/>
       </body>
     </html>
   );

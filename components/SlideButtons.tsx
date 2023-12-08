@@ -7,7 +7,7 @@ import EastIcon from "@mui/icons-material/East";
 import WestIcon from "@mui/icons-material/West";
 
 type IProps = {
-  swiper?:Swiper|undefined
+  swiper?:Swiper|null
 }
 
 

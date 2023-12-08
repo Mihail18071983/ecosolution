@@ -60,7 +60,7 @@ export default function ContactUs() {
             office@ecosolution.com
           </Link>
         </div>
-        <div className="max-w-[244px]">
+        <div className="max-w-[244px] mb-9">
           <h3 className="mb-2 font-firaSans text-16px tracking-[-0.64px] text-main-text-color">
             Address:
           </h3>

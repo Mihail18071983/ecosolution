@@ -61,7 +61,6 @@ function Cases() {
     if (swiper) {
       swiper.on('slideChange', () => {
         setActiveSlide(swiper.realIndex + 1);
-        console.log("real index", swiper.realIndex);
       });
     }
   }, [swiper]);
@@ -85,7 +84,6 @@ function Cases() {
         
           onSlideChange={() => {
             setActiveSlide(swiper?.realIndex! + 1);
-            console.log("real index", swiper?.realIndex);
           }}
             onSwiper={(swiper:SwiperClass) => setSwiper(swiper)}
           loop={true}

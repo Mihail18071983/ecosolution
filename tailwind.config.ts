@@ -16,7 +16,8 @@ const config: Config = {
         "hover-text-color": "#97D28B",
         "menu-text-color": "#ffff",
         "background-color": "#EAEDF1",
-        "slider":"rgba(23, 61, 51, 0.25)"
+        "slider": "rgba(23, 61, 51, 0.25)",
+        "error":"#D28B8B",
       },
       fontSize: {
         "10px": "10px",

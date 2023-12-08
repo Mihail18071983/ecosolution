@@ -45,6 +45,34 @@ body {
   right:0;
 }
 
+.MuiInput-root {
+  border:none;
+}
+
+.MuiInputBase-input {
+  padding: 0;
+  margin: 0;
+  outline:none;
+  border:none;
+}
+
+.css-v4u5dn-MuiInputBase-root-MuiInput-root:after {
+  border-color:#97D28B;
+}
+
+label+.css-v4u5dn-MuiInputBase-root-MuiInput-root {
+  margin: 0;
+}
+
+textarea {
+  outline: none;
+  padding: 0;
+}
+
+input {
+  outline: none;
+}
+
 
 h1,
 h2,
@@ -96,4 +124,8 @@ button {
 
 .MuiButton-endIcon {
   margin: 0;
+}
+
+.MuiButton-root {
+  text-transform: none;
 }

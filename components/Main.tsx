@@ -21,7 +21,7 @@ export default function Main() {
           className=" mx-auto mb-6 flex text-center pl-[16px] p-1 gap-3  font-firaSans text-16px rounded-3xl border-hover-text-color text-main-text-color"
           variant="outlined"
           endIcon={
-            <EastIcon className="bg-hover-text-color p-2 rounded-full w-8 h-8" />
+            <EastIcon className="bg-hover-text-color p-2 rounded-full w-8 h-8 transition delay-500 ease-in-out hover:bg-main-text-color hover:text-hover-text-color " />
           }
         >
           Learn more
