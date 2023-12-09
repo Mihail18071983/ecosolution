@@ -1,6 +1,8 @@
-import React from "react";
+"use client"
 
-import { Box } from "@mui/material";
+import React, { useRef } from "react";
+import useSectionRef from "@/hooks/useSectionRef";
+
 import Image from "next/image";
 
 import ranking from "../assets/svg/ranking.svg";
@@ -37,8 +39,10 @@ const items = [
 ];
 
 export default function About() {
+  const aboutRef = useRef(null);
+  useSectionRef(aboutRef);
   return (
-    <section className="text-main-text-color pt-9 pb-9">
+    <section ref={aboutRef} className="text-main-text-color pt-9 pb-9">
       <div className="container">
         <h2 className="uppercase leading-none font-oswald  text-28px mb-6 pr-10">
           Main values of our company

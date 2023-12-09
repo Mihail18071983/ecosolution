@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef } from "react";
+import useSectionRef from "@/hooks/useSectionRef";
 import Link from "next/link";
 
 import MapIcon from "./svg-components/MapIcon";
@@ -17,8 +18,10 @@ const callItems = [
 ];
 
 export default function ContactUs() {
+  const contactUsRef = useRef(null);
+  useSectionRef(contactUsRef);
   return (
-    <section className="pb-[32px]">
+    <section ref={contactUsRef} className="pb-[32px]">
       <div className="container">
         <h2 className="mb-6 text-center font-oswald text-28px uppercase leading-none">
           Contact us

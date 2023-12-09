@@ -1,21 +1,17 @@
 "use client";
 
 import * as React from "react";
+import { useAppContextValue } from "@/hooks/useAppContextValue";
 import { IconButton, Modal, Box } from "@mui/material";
 import Image from "next/image";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import CloseIcon from "@mui/icons-material/Close";
 import menuIcon from "../assets/svg/menu.svg";
 
-const items = [
-  { id: 1, title: "Main" },
-  { id: 2, title: " About" },
-  { id: 3, title: " Cases" },
-  { id: 4, title: "FAQ" },
-  { id: 5, title: "Contact Us" },
-];
+
 
 export default function BurgerMenu() {
+  const { menuItems, scrollTo, sectionRefs } = useAppContextValue();
   const [open, setOpen] = React.useState(false);
 
   const handleOpen = () => {
@@ -26,9 +22,14 @@ export default function BurgerMenu() {
     setOpen(false);
   };
 
+  const handleScroll = (item: { id: number; name: string }) => {
+    scrollTo(sectionRefs[item.id - 1]);
+  };
+
   return (
     <div className="ml-4">
-      <IconButton className="bg-hover-text-color"
+      <IconButton
+        className="bg-hover-text-color"
         sx={{ width: "40px", height: "40px", borderRadius: "50%" }}
         onClick={handleOpen}
         aria-label="burger"
@@ -57,17 +58,20 @@ export default function BurgerMenu() {
             padding: "24px",
           }}
         >
-          <p className="relative flex items-center gap-1 font-firaSans text-20px text-menu-text-color border-b  border-solid" >
-            <CloseIcon sx={{width:"20px", height:"20px", padding:"3px"}} />
-           <span>close</span> 
+          <p className="relative flex items-center gap-1 border-b border-solid font-firaSans text-20px  text-menu-text-color">
+            <CloseIcon sx={{ width: "20px", height: "20px", padding: "3px" }} />
+            <span>close</span>
           </p>
-          {items.map((item) => (
+          {menuItems.map((item) => (
             <li
               className="flex gap-2 font-firaSans text-menu-text-color hover:text-hover-text-color"
               key={item.id}
-              onClick={handleClose}
+              onClick={() => {
+                handleClose();
+                handleScroll(item);
+              }}
             >
-              {item.title}
+              {item.name}
               <ArrowOutwardIcon />
             </li>
           ))}

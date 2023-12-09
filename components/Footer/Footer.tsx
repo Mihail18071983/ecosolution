@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import bgAsset from "../../assets/svg/bgAsset.svg";
@@ -6,10 +8,15 @@ import NorthIcon from "@mui/icons-material/North";
 import { IconButton } from "@mui/material";
 import FacebookIcon from "../svg-components/FacebookIcon";
 import InstagramIcon from "../svg-components/InstagramIcon";
+import { useAppContextValue } from "@/hooks/useAppContextValue";
 
 export default function Footer() {
+  const { scrollTo, sectionRefs } = useAppContextValue();
+  const scrollToTheMain = () => {
+    scrollTo(sectionRefs[0]);
+  };
   return (
-    <footer>
+    <footer className="pb-6">
       <div className="container">
         <Divider className="mb-5 block h-[2px] bg-hover-text-color" />
         <div className="mb-5 flex items-center">
@@ -24,7 +31,10 @@ export default function Footer() {
             </span>
             <span> FOR LIFE</span>
           </p>
-          <IconButton className=" bg-hover-text-color p-2 text-main-text-color transition delay-500 ease-in-out hover:bg-main-text-color hover:text-hover-text-color">
+          <IconButton
+            onClick={scrollToTheMain}
+            className=" bg-hover-text-color p-2 text-main-text-color transition delay-500 ease-in-out hover:bg-main-text-color hover:text-hover-text-color"
+          >
             <NorthIcon className="h-4 w-4" />
           </IconButton>
         </div>

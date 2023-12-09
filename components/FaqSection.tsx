@@ -1,6 +1,9 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
+import useSectionRef from "@/hooks/useSectionRef";
+import { useAppContextValue } from "@/hooks/useAppContextValue";
+
 import Faq from "./Faq";
 
 const data = [
@@ -35,8 +38,14 @@ const data = [
 ];
 
 export default function FAQ() {
+  const faqRef = useRef(null);
+  useSectionRef(faqRef);
+  const { sectionRefs, scrollTo, menuItems } = useAppContextValue();
+  const scrolltoContactUs = () => {
+    scrollTo(sectionRefs[menuItems.length-1])
+  }
   return (
-    <section className="pt-9 pb-9">
+    <section ref={faqRef} className="pb-9 pt-9">
       <div className="container">
         <h2 className="mb-6 pr-10 text-start font-oswald text-28px uppercase leading-none">
           Frequently Asked Questions
@@ -47,6 +56,7 @@ export default function FAQ() {
             Didn`t find the answer to your question?
           </p>
           <button
+            onClick={scrolltoContactUs}
             type="button"
             className="mx-auto flex items-center gap-3 rounded-full bg-hover-text-color pb-[10px] pl-4 pr-4 pt-[10px] font-firaSans text-16px leading-none tracking-[-0.64px] text-main-text-color  after:block after:h-[14px] after:w-[14px] after:rounded-full after:bg-main-text-color after:content-[''] hover:bg-main-text-color hover:text-hover-text-color hover:after:bg-svg-btn-icon"
           >

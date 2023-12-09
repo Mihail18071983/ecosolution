@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState, useEffect, memo } from "react";
+import React, { useState, useEffect, memo, useRef } from "react";
+import useSectionRef from "@/hooks/useSectionRef";
 import Image from "next/image";
 import { Swiper, SwiperSlide, SwiperClass } from "swiper/react";
 import { Swiper as SwiperInstance } from 'swiper/types';
@@ -54,6 +55,8 @@ const items = [
 ];
 
 function Cases() {
+  const casesRef = useRef(null);
+  useSectionRef(casesRef);
   const [activeSlide, setActiveSlide] = useState(1);
   const [swiper, setSwiper] = useState< SwiperInstance|null>(null);
 
@@ -66,7 +69,7 @@ function Cases() {
   }, [swiper]);
 
   return (
-    <section>
+    <section ref={casesRef}>
       <div className="container">
         <h2 className="mb-4 pr-10 text-start font-oswald text-28px uppercase leading-none">
           Successful cases of our company

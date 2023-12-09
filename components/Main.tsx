@@ -1,4 +1,7 @@
-import React from "react";
+"use client"
+
+import React, { useRef} from "react";
+import useSectionRef from "@/hooks/useSectionRef";
 import { Button } from "@mui/material";
 import imgInMain from "../assets/image/Img_mob.jpg"
 
@@ -6,8 +9,10 @@ import EastIcon from "@mui/icons-material/East";
 import Image from "next/image";
 
 export default function Main() {
+  const mainRef = useRef(null);
+  useSectionRef(mainRef);
   return (
-    <section className="text-main-text-color">
+    <section ref={mainRef} className="text-main-text-color">
       <div className="container">
         <h2 className="uppercase leading-none font-oswald tracking-[-0.4px] text-36px mb-6 pr-10">
           RENEWABLE ENERGY For any task

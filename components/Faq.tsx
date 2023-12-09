@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+
 import Image from "next/image";
 
 import collapseIcon from "../assets/svg/collapse.svg";
@@ -14,7 +15,6 @@ interface IProps {
 
 const Faq = ({ data }: IProps) => {
   const [selected, setSelected] = useState<number | null>(null);
-
   useEffect(() => {
     if (data.length > 0) {
       setSelected(data[0].id);

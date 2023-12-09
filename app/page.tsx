@@ -1,4 +1,4 @@
-
+"use client";
 import styles from "./page.module.css";
 import Main from "@/components/Main";
 import About from "@/components/About";
@@ -9,13 +9,15 @@ import ContactUs from "@/components/ContactUs";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <Main />
-      <About />
-      <Electricity />
-      <Cases />
-      <Faq />
-      <ContactUs/>
-    </main>
+
+      <main className={styles.main}>
+        <Main />
+        <About />
+        <Electricity />
+        <Cases />
+        <Faq />
+        <ContactUs />
+      </main>
+
   );
 }
