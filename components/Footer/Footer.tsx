@@ -11,9 +11,9 @@ import InstagramIcon from "../svg-components/InstagramIcon";
 import { useAppContextValue } from "@/hooks/useAppContextValue";
 
 export default function Footer() {
-  const { scrollTo, sectionRefs } = useAppContextValue();
+  const { scrollTo, sectionRefs, height } = useAppContextValue();
   const scrollToTheMain = () => {
-    scrollTo(sectionRefs[0]);
+    scrollTo(sectionRefs[0], height);
   };
   return (
     <footer className="pb-6">

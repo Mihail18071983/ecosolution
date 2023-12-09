@@ -1,13 +1,15 @@
 "use client";
 import React from "react";
+import { useAppContextValue } from "@/hooks/useAppContextValue";
 import Image from "next/image";
 import bgAsset from "../../assets/svg/bgAsset.svg";
 import BurgerMenu from "../Burger.menu";
 
+
 export default function Header() {
+  const {headerRef}=useAppContextValue()
   return (
-  
-      <header className="pb-[140px] pt-[34px]">
+      <header ref={headerRef} className="fixed top-0 z-10 pt-[34px] pb-[136px] bg-inherit">
         <div className="container flex items-center">
           <Image priority width={31} height={18} src={bgAsset} alt="logo" />
           <h1 className="text-33px  font-bold leading-normal tracking-[-1.1px] text-main-text-color">

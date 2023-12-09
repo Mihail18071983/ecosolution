@@ -11,7 +11,7 @@ import menuIcon from "../assets/svg/menu.svg";
 
 
 export default function BurgerMenu() {
-  const { menuItems, scrollTo, sectionRefs } = useAppContextValue();
+  const { menuItems, scrollTo, sectionRefs, height } = useAppContextValue();
   const [open, setOpen] = React.useState(false);
 
   const handleOpen = () => {
@@ -22,8 +22,8 @@ export default function BurgerMenu() {
     setOpen(false);
   };
 
-  const handleScroll = (item: { id: number; name: string }) => {
-    scrollTo(sectionRefs[item.id - 1]);
+  const handleScroll = (item: { id: number; name: string }, _height:number) => {
+    scrollTo(sectionRefs[item.id - 1], _height);
   };
 
   return (
@@ -68,7 +68,7 @@ export default function BurgerMenu() {
               key={item.id}
               onClick={() => {
                 handleClose();
-                handleScroll(item);
+                handleScroll(item, height);
               }}
             >
               {item.name}

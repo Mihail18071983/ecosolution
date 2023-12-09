@@ -40,14 +40,14 @@ const data = [
 export default function FAQ() {
   const faqRef = useRef(null);
   useSectionRef(faqRef);
-  const { sectionRefs, scrollTo, menuItems } = useAppContextValue();
+  const { sectionRefs, scrollTo, menuItems, height } = useAppContextValue();
   const scrolltoContactUs = () => {
-    scrollTo(sectionRefs[menuItems.length-1])
+    scrollTo(sectionRefs[menuItems.length-1], height);
   }
   return (
-    <section ref={faqRef} className="pb-9 pt-9">
-      <div className="container">
-        <h2 className="mb-6 pr-10 text-start font-oswald text-28px uppercase leading-none">
+    <section  className="pb-9 pt-9">
+      <div ref={faqRef} className="container">
+        <h2   className="mb-6 pr-10 text-start font-oswald text-28px uppercase leading-none">
           Frequently Asked Questions
         </h2>
         <Faq data={data} />

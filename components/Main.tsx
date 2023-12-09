@@ -1,6 +1,7 @@
 "use client"
 
-import React, { useRef} from "react";
+import React, { useRef } from "react";
+import { useAppContextValue } from "@/hooks/useAppContextValue";
 import useSectionRef from "@/hooks/useSectionRef";
 import { Button } from "@mui/material";
 import imgInMain from "../assets/image/Img_mob.jpg"
@@ -11,6 +12,10 @@ import Image from "next/image";
 export default function Main() {
   const mainRef = useRef(null);
   useSectionRef(mainRef);
+  const { scrollTo, menuItems, sectionRefs, height } = useAppContextValue();
+  const scrollToCases = () => {
+    scrollTo(sectionRefs[menuItems.length - 2], height);
+  }
   return (
     <section ref={mainRef} className="text-main-text-color">
       <div className="container">
@@ -23,6 +28,7 @@ export default function Main() {
           biomass
         </p>
         <Button
+          onClick={scrollToCases}
           className=" mx-auto mb-6 flex text-center pl-[16px] p-1 gap-3  font-firaSans text-16px rounded-3xl border-hover-text-color text-main-text-color"
           variant="outlined"
           endIcon={

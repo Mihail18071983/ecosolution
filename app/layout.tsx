@@ -40,10 +40,10 @@ export default function RootLayout({
         <title>Ecosolution</title>
         <meta name="description" content="About altervative power source" />
       </Head>
-      <body>
+      <body className="bg-main-background-color">
         <AppProvider>
           <Header />
-          <main className="main">{children}</main>
+          <main>{children}</main>
           <Footer />
           <Toaster richColors position="top-center" />
         </AppProvider>
