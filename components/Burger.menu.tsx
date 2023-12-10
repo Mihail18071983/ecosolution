@@ -6,6 +6,9 @@ import { IconButton, Modal, Box } from "@mui/material";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import CloseIcon from "@mui/icons-material/Close";
 import MenuIcon from "@mui/icons-material/Menu";
+import { Divider } from "@mui/material";
+import FacebookIcon from "./svg-components/FacebookIcon";
+import InstagramIcon from "./svg-components/InstagramIcon";
 
 export default function BurgerMenu() {
   const { menuItems, scrollTo, sectionRefs, height } = useAppContextValue();
@@ -47,8 +50,11 @@ export default function BurgerMenu() {
       >
         <Box
           sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
             position: "absolute",
-            top: "20px",
+            top: "36px",
             right: "20px",
             left: "20px",
             bottom: "20px",
@@ -58,23 +64,48 @@ export default function BurgerMenu() {
             padding: "24px",
           }}
         >
-          <p className="relative flex items-center gap-1 border-b border-solid font-firaSans text-20px  text-menu-text-color">
-            <CloseIcon sx={{ width: "20px", height: "20px", padding: "3px" }} />
-            <span>close</span>
-          </p>
-          {menuItems.map((item) => (
-            <li
-              className="flex gap-2 font-firaSans text-menu-text-color transition delay-500 ease-in-out hover:text-hover-text-color"
-              key={item.id}
-              onClick={() => {
-                handleClose();
-                handleScroll(item, height);
-              }}
-            >
-              {item.name}
-              <ArrowOutwardIcon />
-            </li>
-          ))}
+          <div>
+            <div className="mb-8">
+              <button
+                type="button"
+                onClick={handleClose}
+                className="flex translate-x-[-4px] items-center  gap-1 font-firaSans text-20px tracking-[-0.8px] text-menu-text-color"
+              >
+                <CloseIcon className="h-5 w-5" />
+                <span>close</span>
+              </button>
+              <Divider className=" bg-white" />
+            </div>
+
+            <ul className="flex flex-col gap-2">
+              {menuItems.map((item) => (
+                <li
+                  className="flex cursor-pointer gap-2 font-firaSans text-24px leading-none tracking-[-0.96px] text-menu-text-color transition delay-500 ease-in-out hover:text-hover-text-color"
+                  key={item.id}
+                  onClick={() => {
+                    handleClose();
+                    handleScroll(item, height);
+                  }}
+                >
+                  {item.name}
+                  <ArrowOutwardIcon className="h-4 w-4" />
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="flex items-center gap-2 ml-0 w-fit">
+            <FacebookIcon
+              width={24}
+              height={24}
+              className="cursor-pointer stroke-white transition delay-500 ease-in-out hover:stroke-hover-text-color"
+            />
+            <InstagramIcon
+              width={24}
+              height={24}
+              className="cursor-pointer stroke-white transition delay-500 ease-in-out hover:stroke-hover-text-color"
+            />
+          </div>
         </Box>
       </Modal>
     </div>
