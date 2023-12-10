@@ -3,12 +3,9 @@
 import * as React from "react";
 import { useAppContextValue } from "@/hooks/useAppContextValue";
 import { IconButton, Modal, Box } from "@mui/material";
-import Image from "next/image";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import CloseIcon from "@mui/icons-material/Close";
-import menuIcon from "../assets/svg/menu.svg";
-
-
+import MenuIcon from "@mui/icons-material/Menu";
 
 export default function BurgerMenu() {
   const { menuItems, scrollTo, sectionRefs, height } = useAppContextValue();
@@ -22,19 +19,22 @@ export default function BurgerMenu() {
     setOpen(false);
   };
 
-  const handleScroll = (item: { id: number; name: string }, _height:number) => {
+  const handleScroll = (
+    item: { id: number; name: string },
+    _height: number,
+  ) => {
     scrollTo(sectionRefs[item.id - 1], _height);
   };
 
   return (
     <div className="ml-4">
       <IconButton
-        className="bg-hover-text-color"
+        className=" bg-hover-text-color p-4 text-main-text-color transition delay-500 ease-in-out hover:bg-main-text-color hover:text-hover-text-color"
         sx={{ width: "40px", height: "40px", borderRadius: "50%" }}
         onClick={handleOpen}
         aria-label="burger"
       >
-        <Image priority={false} src={menuIcon} alt="burger-icon" />
+        <MenuIcon />
       </IconButton>
       <Modal
         open={open}
@@ -64,7 +64,7 @@ export default function BurgerMenu() {
           </p>
           {menuItems.map((item) => (
             <li
-              className="flex gap-2 font-firaSans text-menu-text-color hover:text-hover-text-color"
+              className="flex gap-2 font-firaSans text-menu-text-color transition delay-500 ease-in-out hover:text-hover-text-color"
               key={item.id}
               onClick={() => {
                 handleClose();
