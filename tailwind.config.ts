@@ -11,14 +11,31 @@ const config: Config = {
       gridTemplateColumns: {
         "13": "repeat(13, minmax(0, 1fr))",
       },
+      gridTemplateAreas: {
+        'my-template': {
+          a:["a b c d"],
+          b:["e f g h"]
+        }
+      },
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: "20px",
+          sm: "20px",
+          md: "30px",
+          lg: "100px",
+          xl: "100px",
+          "2xl": "100px",
+        },
+      },
       colors: {
         "main-text-color": "#173D33",
         "hover-text-color": "#97D28B",
         "menu-text-color": "#ffff",
         "background-color": "#EAEDF1",
         "main-background-color": "#F3F5FA",
-        "slider": "rgba(23, 61, 51, 0.25)",
-        "error":"#D28B8B",
+        slider: "rgba(23, 61, 51, 0.25)",
+        error: "#D28B8B",
       },
       fontSize: {
         "10px": "10px",
@@ -52,19 +69,18 @@ const config: Config = {
         "500px": "500px",
       },
       backgroundImage: {
-        'svg-btn-icon': "url('../assets/svg/arrow-down.svg')",
-        'callIcon': "url('../assets/svg/call.svg')",
-        'smsIcon': "url('../assets/svg/sms.svg')",
-        'mapIcon': "url('../assets/svg/map.svg')",
+        "svg-btn-icon": "url('../assets/svg/arrow-down.svg')",
+        callIcon: "url('../assets/svg/call.svg')",
+        smsIcon: "url('../assets/svg/sms.svg')",
+        mapIcon: "url('../assets/svg/map.svg')",
       },
       backgroundSize: {
-      'auto': 'auto',
-      'cover': 'cover',
-      'contain': 'contain',
-      '24px': '24px',
-      '100%': '100%',
-    }
-
+        auto: "auto",
+        cover: "cover",
+        contain: "contain",
+        "24px": "24px",
+        "100%": "100%",
+      },
     },
     keyframes: {
       shimmer: {

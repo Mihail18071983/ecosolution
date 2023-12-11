@@ -32,7 +32,7 @@ export default function BurgerMenu() {
   return (
     <div className="ml-4">
       <IconButton
-        className=" bg-hover-text-color p-4 text-main-text-color transition delay-500 ease-in-out hover:bg-main-text-color hover:text-hover-text-color"
+        className=" bg-hover-text-color p-4 text-main-text-color transition delay-500 ease-in-out hover:[#DCEFD8] hover:text-hover-text-color"
         sx={{ width: "40px", height: "40px", borderRadius: "50%" }}
         onClick={handleOpen}
         aria-label="burger"

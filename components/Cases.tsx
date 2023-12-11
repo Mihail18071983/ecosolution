@@ -1,15 +1,16 @@
 "use client";
 
 import React, { useState, useEffect, memo, useRef } from "react";
+import { useAppContextValue } from "@/hooks/useAppContextValue";
 import useSectionRef from "@/hooks/useSectionRef";
 import Image from "next/image";
 import { Swiper, SwiperSlide, SwiperClass } from "swiper/react";
-import { Swiper as SwiperInstance } from 'swiper/types';
+import { Swiper as SwiperInstance } from "swiper/types";
 import { IconButton } from "@mui/material";
 import CallMadeIcon from "@mui/icons-material/CallMade";
+import {Divider} from "@mui/material";
 
-
-import imageSlide1 from "../assets/image/image1_mob.jpg";
+import imageSlide1 from "../assets/image/beautiful-view-wind-turbines.jpg";
 import imageSlide2 from "../assets/image/solar.jpg";
 import imageSlide3 from "../assets/image/ktp.jpg";
 import imageSlide4 from "../assets/image/windmills.jpg";
@@ -55,14 +56,15 @@ const items = [
 ];
 
 function Cases() {
+  const { matches } = useAppContextValue();
   const casesRef = useRef(null);
   useSectionRef(casesRef);
   const [activeSlide, setActiveSlide] = useState(1);
-  const [swiper, setSwiper] = useState< SwiperInstance|null>(null);
+  const [swiper, setSwiper] = useState<SwiperInstance | null>(null);
 
-   useEffect(() => {
+  useEffect(() => {
     if (swiper) {
-      swiper.on('slideChange', () => {
+      swiper.on("slideChange", () => {
         setActiveSlide(swiper.realIndex + 1);
       });
     }
@@ -71,24 +73,32 @@ function Cases() {
   return (
     <section ref={casesRef}>
       <div className="container">
-        <h2 className="mb-4 pr-10 text-start font-oswald text-28px uppercase leading-none">
-          Successful cases of our company
-        </h2>
-        <SlideButtons swiper={swiper ??undefined} />
-        <p className="-translate-y-6 text-justify font-firaSans text-28px font-light leading-none tracking-[-1.12px]">
-          <span> {activeSlide < 10 ? "0" + activeSlide : activeSlide} </span>
-          <span className="text-slider">
-            /{items.length < 10 ? "0" + items.length : items.length}
-          </span>
-        </p>
+        <div className="md:flex md:mb-7">
+          <h2 className="max-md:mb-4 pr-10 md:pr-[50px] text-start min-[480px]:text-center  font-oswald text-28px uppercase leading-none md:text-36px md:basis-1/2">
+            Successful cases of our company
+          </h2>
+          {matches && <Divider className="bg-hover-text-color" orientation="vertical" flexItem />}
+          <div className="flex flex-row-reverse items-baseline justify-between mb-3 md:justify-between md:flex-grow">
+            <SlideButtons swiper={swiper ?? undefined} />
+            <p className="self-end text-justify font-firaSans text-28px font-light leading-none tracking-[-1.12px] md:ml-3">
+              <span>
+                {" "}
+                {activeSlide < 10 ? "0" + activeSlide : activeSlide}{" "}
+              </span>
+              <span className="text-slider">
+                /{items.length < 10 ? "0" + items.length : items.length}
+              </span>
+            </p>
+          </div>
+        </div>
+
         <Swiper
-          spaceBetween={50}
-          slidesPerView={1}
-        
+          spaceBetween={24}
+          slidesPerView={matches ? 2 : 1}
           onSlideChange={() => {
             setActiveSlide(swiper?.realIndex! + 1);
           }}
-            onSwiper={(swiper:SwiperClass) => setSwiper(swiper)}
+          onSwiper={(swiper: SwiperClass) => setSwiper(swiper)}
           loop={true}
         >
           {items.map((item) => (

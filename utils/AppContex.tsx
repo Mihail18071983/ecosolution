@@ -9,6 +9,8 @@ import {
   useRef,
 } from "react";
 
+import { useMediaQuery } from "@mui/material";
+
 interface IContext {
   children: ReactNode;
 }
@@ -23,6 +25,7 @@ interface IContextType {
   setSectionRefs: Dispatch<SetStateAction<RefObject<HTMLElement>[]>>;
   height: number;
   headerRef: React.RefObject<HTMLElement>;
+  matches: boolean;
 }
 
 const menuItems = [
@@ -50,23 +53,27 @@ export const AppProvider = ({ children }: IContext) => {
     }
   }, []);
 
+  const scrollTo = (ref: RefObject<HTMLElement>) => {
+    if (ref.current) {
+      // Calculate the desired distance below the top of the viewport
+      const distanceBelowViewport = 20;
 
-const scrollTo = (ref: RefObject<HTMLElement>) => {
-  if (ref.current) {
-    // Calculate the desired distance below the top of the viewport
-    const distanceBelowViewport = 20; 
+      ref.current.scrollIntoView({ block: "start", behavior: "smooth" });
 
-    ref.current.scrollIntoView({ block: "start", behavior: "smooth" });
+      // Calculate the scroll position with the desired distance below the top
+      const scrollPosition =
+        ref.current.offsetTop - height - distanceBelowViewport;
 
-    // Calculate the scroll position with the desired distance below the top
-    const scrollPosition = ref.current.offsetTop - height - distanceBelowViewport;
+      // Use Math.max to ensure the scroll position is not negative
+      window.scrollTo({
+        top: Math.max(0, scrollPosition),
+        left: 0,
+        behavior: "smooth",
+      });
+    }
+  };
 
-    // Use Math.max to ensure the scroll position is not negative
-    window.scrollTo({ top: Math.max(0, scrollPosition), left: 0, behavior: "smooth" });
-  }
-};
-
-
+  const matches = useMediaQuery("(min-width:768px)");
 
   return (
     <AppContext.Provider
@@ -77,6 +84,7 @@ const scrollTo = (ref: RefObject<HTMLElement>) => {
         setSectionRefs,
         height,
         headerRef,
+        matches,
       }}
     >
       {children}

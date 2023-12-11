@@ -108,7 +108,7 @@ button {
   cursor: pointer;
 }
 
-.container {
+/* .container {
   margin-left: auto;
   margin-right: auto;
   padding-left: 20px;
@@ -123,13 +123,13 @@ button {
   }
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1280px) {
   .container {
     padding-left: 100px;
     padding-right: 100px;
     max-width: 1600px;
   }
-}
+} */
 
 .MuiButton-endIcon {
   margin: 0;
