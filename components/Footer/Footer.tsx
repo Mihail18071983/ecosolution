@@ -51,11 +51,11 @@ export default function Footer() {
           />
         </div>
 
-        <div className="mx-auto text-center font-firaSans tracking-[-0.64px] text-main-text-color">
-          <address className=" mb-4 text-16px not-italic  leading-none">
+        <div className="mx-auto text-center font-firaSans tracking-[-0.64px] text-main-text-color md:flex md:justify-between items-center">
+          <address className="max:md-mb-4 text-16px not-italic  leading-none">
             79005, Ukraine, Lvivstreet. Shota Rustaveli, 7
           </address>
-          <p className="mb-3">office@ecosolution.com</p>
+          <p className="max:md-mb-3">office@ecosolution.com</p>
           <p>ecosolution © 2023</p>
         </div>
       </div>

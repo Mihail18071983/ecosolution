@@ -66,7 +66,7 @@ export default function Form() {
   return (
     <>
       <form
-        className=" bg-background-color flex flex-col pb-9 pl-3 pr-3 pt-9"
+        className=" bg-background-color flex flex-col pb-9 pl-3 pr-3 pt-9 md:flex-1 md:pl-6 md:pt-10"
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className=" mb-8 flex flex-col gap-7">

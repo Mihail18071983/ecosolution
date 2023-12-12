@@ -26,7 +26,7 @@ const Faq = ({ data }: IProps) => {
   };
 
   return (
-    <ul className="mb-10">
+    <ul className="max-md:mb-10">
       {data.map((item) => (
         <li className="pt-5 pb-5 border-t border-t-hover-text-color" key={item.id}>
           <div onClick={() => toggle(item.id)} className="flex justify-between gap-2 mb-3">

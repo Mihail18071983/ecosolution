@@ -3,9 +3,11 @@
 import React, { useRef } from "react";
 import useSectionRef from "@/hooks/useSectionRef";
 import { useAppContextValue } from "@/hooks/useAppContextValue";
-import { Button} from "@mui/material";
+import { Button } from "@mui/material";
+import styled from "@emotion/styled";
 
 import Faq from "./Faq";
+import StyledEngine from "@mui/styled-engine";
 
 const data = [
   {
@@ -46,13 +48,15 @@ export default function FAQ() {
     scrollTo(sectionRefs[menuItems.length - 1], height);
   };
   return (
-    <section className="pb-9 pt-9">
-      <div ref={faqRef} className="container">
-        <h2 className="mb-6 pr-10 text-start font-oswald text-28px uppercase leading-none">
+    <section className="pb-9 pt-9 md:pb-[140px]">
+      <FaqContainer ref={faqRef} className="container">
+        <Title className="mb-6 pr-10 text-start font-oswald text-28px uppercase leading-none md:text-36px">
           Frequently Asked Questions
-        </h2>
-        <Faq data={data} />
-        <div className="mx-auto">
+        </Title>
+        <StyledFaq>
+          <Faq data={data} />
+        </StyledFaq>
+        <Box className="mx-auto">
           <p className="mb-3 text-center font-firaSans text-18px tracking-[-0.72px]">
             Didn`t find the answer to your question?
           </p>
@@ -63,8 +67,39 @@ export default function FAQ() {
           >
             Contact Us
           </Button>
-        </div>
-      </div>
+        </Box>
+      </FaqContainer>
     </section>
   );
 }
+
+const FaqContainer = styled.div`
+  @media screen and (min-width: 768px) {
+    display: grid;
+    grid-template-areas:
+      "a b"
+      "c d"
+      "e f";
+    column-gap: 24px;
+     grid-template-columns:
+      repeat(2, 1fr)
+  }
+`;
+
+const Title = styled.h2`
+  @media screen and (min-width: 768px) {
+    grid-area: b;
+  }
+`;
+const Box = styled.div`
+  @media screen and (min-width: 768px) {
+    grid-area: f;
+  }
+`;
+
+const StyledFaq = styled.div`
+  @media screen and (min-width: 768px) {
+    grid-area: a;
+    grid-row: span 3;
+  }
+`;

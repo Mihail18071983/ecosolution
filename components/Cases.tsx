@@ -71,7 +71,7 @@ function Cases() {
   }, [swiper]);
 
   return (
-    <section ref={casesRef}>
+    <section className="md:pb-[64px]" ref={casesRef}>
       <div className="container">
         <div className="md:flex md:mb-7">
           <h2 className="max-md:mb-4 pr-10 md:pr-[50px] text-start min-[480px]:text-center  font-oswald text-28px uppercase leading-none md:text-36px md:basis-1/2">
