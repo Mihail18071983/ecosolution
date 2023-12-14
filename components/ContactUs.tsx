@@ -21,7 +21,7 @@ export default function ContactUs() {
   const contactUsRef = useRef(null);
   useSectionRef(contactUsRef);
   return (
-    <section ref={contactUsRef} className="pb-[32px]">
+    <section ref={contactUsRef} className="pb-[32px] md:pb-[100px]">
       <div className="container">
         <h2 className="mb-6 md:mb-8 text-center font-oswald text-28px uppercase leading-none md:text-36px">
           Contact us
