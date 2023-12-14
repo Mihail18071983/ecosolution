@@ -47,14 +47,14 @@ const Faq = ({ data }: IProps) => {
                 alt="add icon"
               />
             )}
-            <h2 className="font-firaSans text-18px text-justify leading-tight tracking-[-0.72px]">
+            <h2 className="font-firaSans text-18px text-justify leading-tight tracking-[-0.72px] xl:text-24px">
               {item.title}
             </h2>
           </div>
 
           
             {selected === item.id && (
-              <p className="text-14px font-firaSans text-justify leading-tight tracking-[-0.56px] pl-6">
+              <p className="text-14px xl:text-16px font-firaSans text-justify leading-tight tracking-[-0.56px] pl-6">
                 {item.content}
               </p>
             )}

@@ -12,7 +12,10 @@ import globalEdit from "../assets/svg/global-edit.svg";
 import cpuCharge from "../assets/svg/cpu-charge.svg";
 
 import manWorkerPath from "../assets/image/man-worker-firld-by-solar-panels.jpg";
+import manWorkerPathXL from "../assets/image/man-worker-firld-by-solar-panels-desk.jpg";
 import windFarmFieldsPath from "../assets/image/wind-farms-fields.jpg";
+import windFarmFieldsPathXL from "../assets/image/wind-farms-fields-desc.jpg";
+
 
 const items = [
   {
@@ -44,20 +47,20 @@ const items = [
 ];
 
 export default function About() {
-  const { matches } = useAppContextValue();
+  const { matches, matchesXL } = useAppContextValue();
   const aboutRef = useRef(null);
   useSectionRef(aboutRef);
   return (
     <section
       ref={aboutRef}
-      className="pb-9 pt-9 text-main-text-color  md:pt-[102px] md:pb-[102px]"
+      className="pb-9 pt-9 text-main-text-color  md:pt-[102px] md:pb-[102px] xl:pt-[110px] xl:pb-[120px]"
     >
       <div className="container">
-        <div className="md:mb-[60px] md:flex md:gap-[94px]">
-          <h2 className="mb-6 font-oswald text-28px  uppercase leading-none max-md:pr-10 md:min-w-[272px] md:text-36px">
+        <div className="md:mb-[60px] xl:mb-[80px] md:flex md:gap-[94px] xl:justify-between">
+          <h2 className="mb-6 font-oswald text-28px  uppercase leading-none max-md:pr-10 md:min-w-[272px] md:text-36px xl:text-48px xl:max-w-[365px]">
             Main values of our company
           </h2>
-          <p className="mb-8 text-justify font-firaSans text-16px leading-5 tracking-[-0.64px]">
+          <p className="mb-8 text-justify font-firaSans text-16px leading-5 tracking-[-0.64px] xl:max-w-[460px]">
             EcoSolution envisions a world where sustainable energy solutions
             power a brighter and cleaner future for all. We aspire to be at the
             forefront of the global shift towards renewable energy, leading the
@@ -66,15 +69,15 @@ export default function About() {
           </p>
         </div>
 
-        <ValuesList className=" grid gap-6 max-md:grid-cols-2 max-md:grid-rows-2">
+        <ValuesList className=" grid gap-6 max-md:grid-cols-2 max-md:grid-rows-2 xl:gap-[44px]">
           {items.map((item) => (
             <Item
-              className="flex h-[197px] flex-col bg-background-color pb-3 pl-3 pr-3 pt-[13px] text-main-text-color"
+              className="flex max-md:h-[197px] flex-col bg-background-color pb-3 pl-3 pr-3 pt-[13px] text-main-text-color xl:p-6 xl:justify-around"
               key={item.id}
             >
               <div className="mb-3 flex items-baseline gap-1 border-b border-hover-text-color pb-8">
-                <Image width={16} height={16} src={item.iconPath} alt="icon" />
-                <h3 className="font-oswald text-16px uppercase leading-6 md:text-18px">
+                <Image className="xl:w-6 h-6" width={16} height={16} src={item.iconPath} alt="icon" />
+                <h3 className="font-oswald text-16px uppercase leading-6 md:text-18px xl:text-32px">
                   {item.title}
                 </h3>
               </div>
@@ -83,22 +86,38 @@ export default function About() {
               </p>
             </Item>
           ))}
-          {matches && (
-            <>
-              <Item>
-                <Image
-                  src={manWorkerPath}
-                  alt="man worker field by solar panel"
-                />
-              </Item>
-              <Item>
-                <Image
-                  src={windFarmFieldsPath}
-                  alt="man worker field by solar panel"
-                />
-              </Item>
-            </>
-          )}
+        {matchesXL ? (
+  <>
+    <Item>
+      <Image className="w-full"
+        src={manWorkerPathXL}
+        alt="man worker field by solar panel"
+      />
+    </Item>
+    <Item>
+      <Image className="w-full"
+        src={windFarmFieldsPathXL}
+        alt="man worker field by solar panel"
+      />
+    </Item>
+  </>
+) : matches ? (
+  <>
+    <Item>
+      <Image
+        src={manWorkerPath}
+        alt="man worker field by solar panel"
+      />
+    </Item>
+    <Item>
+      <Image
+        src={windFarmFieldsPath}
+        alt="man worker field by solar panel"
+      />
+    </Item>
+  </>
+) : null}
+
         </ValuesList>
       </div>
     </section>

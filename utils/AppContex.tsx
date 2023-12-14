@@ -26,6 +26,7 @@ interface IContextType {
   height: number;
   headerRef: React.RefObject<HTMLElement>;
   matches: boolean;
+  matchesXL: boolean;
 }
 
 const menuItems = [
@@ -74,6 +75,7 @@ export const AppProvider = ({ children }: IContext) => {
   };
 
   const matches = useMediaQuery("(min-width:768px)");
+  const matchesXL=useMediaQuery("(min-width:1280px)");
 
   return (
     <AppContext.Provider
@@ -85,6 +87,7 @@ export const AppProvider = ({ children }: IContext) => {
         height,
         headerRef,
         matches,
+        matchesXL,
       }}
     >
       {children}

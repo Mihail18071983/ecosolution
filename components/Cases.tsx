@@ -56,7 +56,7 @@ const items = [
 ];
 
 function Cases() {
-  const { matches } = useAppContextValue();
+  const { matches, matchesXL } = useAppContextValue();
   const casesRef = useRef(null);
   useSectionRef(casesRef);
   const [activeSlide, setActiveSlide] = useState(1);
@@ -71,16 +71,16 @@ function Cases() {
   }, [swiper]);
 
   return (
-    <section className="md:pb-[64px]" ref={casesRef}>
+    <section className="md:pb-[64px] xl:pb-[120px]" ref={casesRef}>
       <div className="container">
-        <div className="md:flex md:mb-7">
-          <h2 className="max-md:mb-4 pr-10 md:pr-[50px] text-start min-[480px]:text-center  font-oswald text-28px uppercase leading-none md:text-36px md:basis-1/2">
+        <div className="md:flex md:mb-7 xl:justify-between">
+          <h2 className="max-md:mb-4 pr-10 md:pr-[50px] text-start min-[480px]:text-center  font-oswald text-28px uppercase leading-none md:text-36px md:basis-1/2 xl:text-48px xl:text-start xl:max-w-[50%]">
             Successful cases of our company
           </h2>
           {matches && <Divider className="bg-hover-text-color" orientation="vertical" flexItem />}
-          <div className="flex flex-row-reverse items-baseline justify-between mb-3 md:justify-between md:flex-grow">
+          <div className="flex flex-row-reverse items-baseline justify-between mb-3 md:justify-between xl:flex-grow">
             <SlideButtons swiper={swiper ?? undefined} />
-            <p className="self-end text-justify font-firaSans text-28px font-light leading-none tracking-[-1.12px] md:ml-3">
+            <p className="self-end text-justify font-firaSans text-28px font-light leading-none tracking-[-1.12px] md:ml-3 xl:ml-[150px]">
               <span>
                 {" "}
                 {activeSlide < 10 ? "0" + activeSlide : activeSlide}{" "}
@@ -93,7 +93,7 @@ function Cases() {
         </div>
 
         <Swiper
-          spaceBetween={24}
+          spaceBetween={matchesXL?48:24}
           slidesPerView={matches ? 2 : 1}
           onSlideChange={() => {
             setActiveSlide(swiper?.realIndex! + 1);
@@ -104,7 +104,7 @@ function Cases() {
           {items.map((item) => (
             <SwiperSlide key={item.id}>
               <div className="bg-background-color">
-                <Image src={item.path} alt={item.description} />
+                <Image src={item.path} alt={item.description} className="w-full" />
                 <div className="pb-3 pl-3 pr-3 pt-6">
                   <div className="mb-3 flex items-center justify-between gap-[61px] border-b border-b-hover-text-color pb-7 ">
                     <h4 className=" font-firaSans text-18px leading-none tracking-[-0.72px] text-main-text-color">

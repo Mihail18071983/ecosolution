@@ -48,16 +48,12 @@ export default function BurgerMenu() {
           justifyContent: "center",
         }}
       >
-        <Box
+        <Box className=" top-[36px] right-5 bottom-5 max-md:left-5 md:w-[320px]"
           sx={{
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
             position: "absolute",
-            top: "36px",
-            right: "20px",
-            left: "20px",
-            bottom: "20px",
             borderRadius: "25px",
             backgroundColor: "rgba(23, 61, 51, 0.75)",
             backdropFilter: "blur(12.5px)",
@@ -111,3 +107,5 @@ export default function BurgerMenu() {
     </div>
   );
 }
+
+

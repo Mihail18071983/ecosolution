@@ -4,7 +4,7 @@ import React from "react";
 
 import { useForm, SubmitHandler } from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
-import { Input, TextField, FormControl, FormLabel, Button } from "@mui/material";
+import { TextField, FormControl, FormLabel, Button } from "@mui/material";
 import { TextareaAutosize } from "@mui/base/TextareaAutosize";
 import EastIcon from "@mui/icons-material/East";
 import { ColorRing } from "react-loader-spinner";
@@ -66,7 +66,7 @@ export default function Form() {
   return (
     <>
       <form
-        className=" bg-background-color flex flex-col pb-9 pl-3 pr-3 pt-9 md:flex-1 md:pl-6 md:pt-10"
+        className=" bg-background-color flex flex-col pb-9 pl-3 pr-3 pt-9 md:flex-1 md:pl-6 md:pt-10 xl:max-w-[600px]"
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className=" mb-8 flex flex-col gap-7">

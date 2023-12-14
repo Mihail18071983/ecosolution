@@ -23,12 +23,12 @@ function Electricity() {
   return (
     <section ref={electricityRef} className=" pb-6 md:pb-[80px]">
       <div className="container">
-        <h2 className="mb-6 text-center font-oswald text-28px uppercase leading-none  md:pl-[150px] md:pr-[150px] md:text-36px">
+        <h2 className="mb-6 text-center font-oswald text-28px uppercase leading-none  max-xl:pl-[150px] max-xl:pr-[150px] md:text-36px xl:text-48px xl:max-w-[491px] xl:text-center xl:mx-auto">
           Electricity we produced for all time
         </h2>
         <Divider component="div" textAlign="center" orientation="vertical" className="h-[48px] md:h-[87px] w-[1px] bg-hover-text-color mx-auto" />
         <p className="mx-auto flex w-fit items-center gap-2 text-center font-oswald md:gap-4">
-          <span className="text-48px font-bold tracking-[0.9px] text-hover-text-color md:text-[100px]">
+          <span className="text-48px font-bold tracking-[0.9px] text-hover-text-color md:text-[100px] xl:text-164px">
             {formatNumber(count)}
           </span>
           <span className="text-24px text-main-text-color md:text-28px">

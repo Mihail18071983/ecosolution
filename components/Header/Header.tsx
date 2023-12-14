@@ -32,12 +32,12 @@ export default function Header() {
   return (
     <header
       ref={headerRef}
-      className="fixed left-0 right-0 top-0 z-10 bg-inherit pb-[136px] md:pb-[155px] pt-[34px]"
+      className="fixed left-0 right-0 top-0 z-10 bg-inherit pb-[136px] xl:pb-[200px] md:pb-[155px] pt-[34px] xl:pt-[20px]"
     >
       <div className="container flex items-center justify-between">
         <div className="flex items-center">
           <Image priority width={31} height={18} src={bgAsset} alt="logo" />
-          <h1 className="text-33px  font-bold leading-normal tracking-[-1.1px] text-inherit">
+          <h1 className="text-33px font-bold leading-normal tracking-[-1.1px] text-inherit">
             ecosolution
           </h1>
           <p className="flex-column w-[60px] gap-0 font-ca-saygon-text text-10px leading-none tracking-[-0.4px] text-hover-text-color">

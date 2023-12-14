@@ -21,13 +21,13 @@ export default function ContactUs() {
   const contactUsRef = useRef(null);
   useSectionRef(contactUsRef);
   return (
-    <section ref={contactUsRef} className="pb-[32px] md:pb-[100px]">
+    <section ref={contactUsRef} className="pb-[32px] md:pb-[100px] xl:pt-[135px] xl:pb-[170px]">
       <div className="container">
-        <h2 className="mb-6 md:mb-8 text-center font-oswald text-28px uppercase leading-none md:text-36px">
+        <h2 className="mb-6 md:mb-8 xl:mb-[120px] text-center font-oswald text-28px uppercase leading-none md:text-36px xl:text-48px">
           Contact us
         </h2>
-        <div className="md:flex md:justify-between md:gap-[120px]">
-          <div>
+        <div className="md:flex md:justify-between md:gap-[120px] xl:min-w-[470px]">
+          <div className="xl:flex xl:flex-col xl:gap-8">
             <div className="mb-5">
               <h3 className="mb-2 font-firaSans text-16px tracking-[-0.64px] text-main-text-color">
                 Phone:
@@ -36,7 +36,7 @@ export default function ContactUs() {
                 {callItems.map((item) => (
                   <Link
                     key={item.id}
-                    className="flex items-center gap-2 font-firaSans text-20px leading-none tracking-[-0.8px] text-main-text-color first:mb-3 "
+                    className="flex items-center gap-2 font-firaSans text-20px xl:text-24px leading-none tracking-[-0.8px] text-main-text-color first:mb-3 "
                     href={`tel:${item.content}`}
                   >
                     <CallIcon
@@ -54,7 +54,7 @@ export default function ContactUs() {
                 E-mail:
               </h3>
               <Link
-                className="flex items-center gap-2 font-firaSans text-20px leading-none tracking-[-0.8px] text-main-text-color "
+                className="flex items-center gap-2 font-firaSans text-20px xl:text-24px leading-none tracking-[-0.8px] text-main-text-color "
                 href="mail:office@ecosolution.com"
               >
                 <SmsIcon

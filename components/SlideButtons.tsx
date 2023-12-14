@@ -21,21 +21,21 @@ const IconButtonStyled = styled(IconButton)`
 
 export default function SlideButtons({ swiper }: IProps) {
   return (
-    <ButtonGroup
-      sx={{ gap: "12px", display: "flex", justifyContent: "flex-end" }}
+    <div className="flex gap-3 justify-end"
+    
     >
       <IconButtonStyled
-        className="border p-[15px] text-main-text-color hover:text-hover-text-color "
+        className="border p-[15px] xl:p-[24px] text-main-text-color hover:text-hover-text-color "
         onClick={() => swiper?.slidePrev()}
       >
         <WestIcon className="h-[36px] w-[36px]" />
       </IconButtonStyled>
       <IconButtonStyled
         onClick={() => swiper?.slideNext()}
-        className="p-[15px] text-main-text-color  hover:text-hover-text-color"
+        className="p-[15px] xl:p-[24px] text-main-text-color  hover:text-hover-text-color"
       >
         <EastIcon className="h-[36px] w-[36px]" />
       </IconButtonStyled>
-    </ButtonGroup>
+    </div>
   );
 }

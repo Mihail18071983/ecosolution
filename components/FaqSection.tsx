@@ -7,7 +7,7 @@ import { Button } from "@mui/material";
 import styled from "@emotion/styled";
 
 import Faq from "./Faq";
-import StyledEngine from "@mui/styled-engine";
+
 
 const data = [
   {
@@ -48,9 +48,9 @@ export default function FAQ() {
     scrollTo(sectionRefs[menuItems.length - 1], height);
   };
   return (
-    <section className="pb-9 pt-9 md:pb-[140px]">
+    <section className="pb-9 pt-9 md:pb-[140px] xl:pt-[140px]">
       <FaqContainer ref={faqRef} className="container">
-        <Title className="mb-6 pr-10 text-start font-oswald text-28px uppercase leading-none md:text-36px">
+        <Title className="mb-6 text-start font-oswald text-28px uppercase leading-none md:text-36px xl:text-48px xl:max-w-[400px] xl:justify-self-center xl:text-center">
           Frequently Asked Questions
         </Title>
         <StyledFaq>

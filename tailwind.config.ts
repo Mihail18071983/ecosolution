@@ -47,8 +47,11 @@ const config: Config = {
         "20px": "20px",
         "24px": "24px",
         "28px": "28px",
+        "32px": "32px",
         "36px": "36px",
         "48px": "48px",
+        "64px": "64px",
+        "164px": "164px",
       },
       fontFamily: {
         "all-round-gothic-thick": ["All Round Gothic Thick"],
