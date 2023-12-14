@@ -1,7 +1,6 @@
 "use client";
 
 import Head from "next/head";
-// import type { Metadata } from "next";
 import { Fira_Sans, Oswald } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header/Header";
@@ -9,10 +8,7 @@ import Footer from "@/components/Footer/Footer";
 import { Toaster } from "sonner";
 import { AppProvider } from "@/utils/AppContex";
 
-// export const metadata: Metadata = {
-//   title: "Ecosolution",
-//   description: "About altervative power source",
-// };
+
 
 const firaSans = Fira_Sans({
   weight: "400",

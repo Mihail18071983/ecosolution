@@ -110,11 +110,11 @@ function Cases() {
                     <h4 className=" font-firaSans text-18px leading-none tracking-[-0.72px] text-main-text-color">
                       {item.name}
                     </h4>
-                    <IconButton className=" bg-hover-text-color p-4 text-main-text-color transition delay-500 ease-in-out hover:bg-main-text-color hover:text-hover-text-color">
+                    <button type="button" className=" rounded-full bg-hover-text-color p-4 text-main-text-color transition delay-500 ease-in-out hover:bg-main-text-color hover:text-hover-text-color">
                       <CallMadeIcon className="h-7 w-7" />
-                    </IconButton>
+                    </button>
                   </div>
-                  <div className="flex items-center justify-between font-firaSans text-12px leading-none tracking-[-0.72px] text-main-text-color">
+                  <div className="flex items-center  justify-between font-firaSans text-12px leading-none tracking-[-0.72px] text-main-text-color">
                     <p>{item.description}</p>
                     <p>{item.date}</p>
                   </div>

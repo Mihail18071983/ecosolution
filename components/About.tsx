@@ -137,28 +137,28 @@ const ValuesList = styled.ul`
 
 const Item = styled.li`
   @media screen and (min-width: 768px) {
-    &:nth-child(1) {
+    &:nth-of-type(1) {
       grid-area: a;
     }
 
-    &:nth-child(2) {
+    &:nth-of-type(2) {
       grid-area: b;
     }
 
-    &:nth-child(3) {
+    &:nth-of-type(3) {
       grid-area: g;
     }
 
-    &:nth-child(4) {
+    &:nth-of-type(4) {
       grid-area: h;
     }
 
-    &:nth-child(5) {
+    &:nth-of-type(5) {
       grid-area: c;
       grid-column: span 2;
     }
 
-    &:nth-child(6) {
+    &:nth-of-type(6) {
       grid-area: e;
       grid-column: span 2;
     }

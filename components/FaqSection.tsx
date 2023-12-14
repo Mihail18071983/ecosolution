@@ -3,7 +3,6 @@
 import React, { useRef } from "react";
 import useSectionRef from "@/hooks/useSectionRef";
 import { useAppContextValue } from "@/hooks/useAppContextValue";
-import { Button } from "@mui/material";
 import styled from "@emotion/styled";
 
 import Faq from "./Faq";
@@ -60,13 +59,13 @@ export default function FAQ() {
           <p className="mb-3 text-center font-firaSans text-18px tracking-[-0.72px]">
             Didn`t find the answer to your question?
           </p>
-          <Button
+          <button
             onClick={scrolltoContactUs}
             type="button"
             className="mx-auto flex items-center gap-3 rounded-full bg-hover-text-color pb-[10px] pl-4 pr-4 pt-[10px] font-firaSans text-16px leading-none tracking-[-0.64px] text-main-text-color   after:block after:h-[14px] after:w-[14px] after:rounded-full after:bg-main-text-color after:content-[''] hover:bg-main-text-color hover:text-hover-text-color hover:after:bg-svg-btn-icon"
           >
             Contact Us
-          </Button>
+          </button>
         </Box>
       </FaqContainer>
     </section>

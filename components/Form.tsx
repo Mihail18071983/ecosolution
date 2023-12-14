@@ -66,7 +66,7 @@ export default function Form() {
   return (
     <>
       <form
-        className=" bg-background-color flex flex-col pb-9 pl-3 pr-3 pt-9 md:flex-1 md:pl-6 md:pt-10 xl:max-w-[600px]"
+        className=" flex flex-col bg-background-color pb-9 pl-3 pr-3 pt-9 md:flex-1 md:pl-6 md:pt-10 xl:max-w-[600px]"
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className=" mb-8 flex flex-col gap-7">
@@ -85,7 +85,7 @@ export default function Form() {
                   {item.title}
                 </FormLabel>
                 <TextField
-                  className="bg-transparent border-b-hover-text-color font-firaSans text-18px leading-none -tracking-normal "
+                  className="border-b-hover-text-color bg-transparent font-firaSans text-18px leading-none -tracking-normal "
                   placeholder={item.placeholder}
                   variant="standard"
                   required
@@ -112,7 +112,7 @@ export default function Form() {
           })}
         </div>
 
-        <FormControl fullWidth variant="standard" className="mb-3">
+        <FormControl fullWidth variant="standard" sx={{marginBottom:"12px"}}>
           <FormLabel
             className="mb-2 font-firaSans text-16px leading-none tracking-[-0.64px]"
             htmlFor="message"
@@ -138,16 +138,13 @@ export default function Form() {
             colors={["#e15b64", "#f47e60", "#f8b26a", "#abbd81", "#849b87"]}
           />
         ) : (
-          <Button
+          <button
             type="submit"
-            className=" ml-auto mr-0  flex gap-3 rounded-3xl border-hover-text-color p-1  pl-[16px] text-center font-firaSans text-16px text-main-text-color"
-            variant="outlined"
-            endIcon={
-              <EastIcon className="h-8 w-8 rounded-full bg-hover-text-color p-2 transition delay-500 ease-in-out hover:bg-main-text-color hover:text-hover-text-color " />
-            }
+            className=" border  ml-auto mr-0  flex items-center gap-3 rounded-3xl border-hover-text-color p-1  pl-[16px] text-center font-firaSans text-16px text-main-text-color hover:bg-main-text-color hover:text-hover-text-color"
           >
-            Send
-          </Button>
+            <span>Send</span>
+            <EastIcon sx={{width:"32px", height:"32px"}} className=" rounded-full bg-hover-text-color p-2 transition delay-500 ease-in-out text-main-text-color " />
+          </button>
         )}
       </form>
       <DevTool control={control} />

@@ -30,15 +30,15 @@ export default function BurgerMenu() {
   };
 
   return (
-    <div className="ml-4">
-      <IconButton
-        className=" bg-hover-text-color p-4 text-main-text-color transition delay-500 ease-in-out hover:[#DCEFD8] hover:text-hover-text-color"
-        sx={{ width: "40px", height: "40px", borderRadius: "50%" }}
+    <div>
+      <button
+        type = "button"
+        className=" flex items-center justify-center w-10 h-10 rounded-full bg-[#DCEFD8] p-4 text-main-text-color transition delay-500 ease-in-out hover:[#DCEFD8] hover:text-hover-text-color"
         onClick={handleOpen}
         aria-label="burger"
       >
         <MenuIcon />
-      </IconButton>
+      </button>
       <Modal
         open={open}
         onClose={handleClose}

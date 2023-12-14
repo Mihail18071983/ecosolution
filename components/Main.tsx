@@ -22,7 +22,7 @@ export default function Main() {
   return (
     <section ref={mainRef} className="text-main-text-color">
       <div className="container">
-        <div className="md:mb-6 md:flex md:justify-between md:gap-[65px] xl:justify-normal xl:gap-[300px] xl:mb-7">
+        <div className="md:mb-6 md:flex md:justify-between md:gap-[65px] xl:mb-7 xl:justify-normal xl:gap-[300px]">
           <h2 className="font-oswald text-36px uppercase leading-none tracking-[-0.4px] max-xl:pr-10 max-md:mb-6 md:min-w-[300px] md:text-48px xl:max-w-[485px] xl:text-64px">
             RENEWABLE ENERGY For any task
           </h2>
@@ -32,16 +32,14 @@ export default function Main() {
               sources, generating power generation using energy wind, sun,
               water, biomass
             </p>
-            <Button
+            <button
               onClick={scrollToCases}
-              className="flex gap-3 rounded-3xl border-hover-text-color p-1 pl-[16px] text-center  font-firaSans text-16px text-main-text-color transition delay-500 ease-in-out hover:bg-main-text-color hover:text-hover-text-color max-md:mx-auto max-md:mb-6"
-              variant="outlined"
-              endIcon={
-                <EastIcon className=" h-8 w-8 rounded-full bg-hover-text-color  p-2 text-main-text-color " />
-              }
+              type="button"
+              className="flex gap-3 border  items-center rounded-3xl border-hover-text-color p-1 pl-[16px] text-center  font-firaSans text-16px text-main-text-color transition delay-500 ease-in-out hover:bg-main-text-color hover:text-hover-text-color max-md:mx-auto max-md:mb-6"
             >
-              Learn more
-            </Button>
+              <span>Learn more</span>
+              <EastIcon sx={{width:32, height:32, borderRadius:"100%"}} className=" bg-hover-text-color  p-2 text-main-text-color " />
+            </button>
           </div>
         </div>
 
@@ -51,9 +49,7 @@ export default function Main() {
             <span>Shota Rustaveli, 7</span>
           </p>
           <p className="block text-center max-md:mt-2 xl:ml-[320px]">
-            <span >
-              office@ecosolution.com
-            </span>
+            <span>office@ecosolution.com</span>
           </p>
           <p>{matches && <span>ecosolution © 2023</span>}</p>
         </div>

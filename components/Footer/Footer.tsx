@@ -3,9 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import bgAsset from "../../assets/svg/bgAsset.svg";
-import { Divider } from "@mui/material";
 import NorthIcon from "@mui/icons-material/North";
-import { IconButton } from "@mui/material";
 import FacebookIcon from "../svg-components/FacebookIcon";
 import InstagramIcon from "../svg-components/InstagramIcon";
 import { useAppContextValue } from "@/hooks/useAppContextValue";
@@ -18,7 +16,7 @@ export default function Footer() {
   return (
     <footer className="pb-6">
       <div className="container">
-        <Divider className="mb-5 md:mb-8 block h-[2px] bg-hover-text-color" />
+        <hr className="mb-5 md:mb-8 block h-[2px] bg-hover-text-color" />
         <div className="mb-5 md:mb-3 flex flex-wrap items-baseline justify-center gap-1 md:justify-between">
           <div className="flex items-center gap-1">
             <Image priority width={31} height={18} src={bgAsset} alt="logo" />
@@ -34,13 +32,14 @@ export default function Footer() {
             </p>
           </div>
 
-          <IconButton
+          <button
+            type="button"
             onClick={scrollToTheMain}
-            className=" bg-hover-text-color p-2 text-main-text-color transition delay-500 ease-in-out hover:bg-main-text-color hover:text-hover-text-color min-[410px]:order-2"
+            className=" rounded-full flex items-center justify-center  bg-hover-text-color p-2 text-main-text-color transition delay-500 ease-in-out hover:bg-main-text-color hover:text-hover-text-color min-[410px]:order-2"
           >
             <NorthIcon className="h-4 w-4" />
-          </IconButton>
-          <div className=" flex items-center justify-center gap-2 min-[410px]:order-1 md:ml-[-160px]">
+          </button>
+          <div className=" flex self-center items-center justify-center gap-2 min-[410px]:order-1 md:ml-[-160px]">
             <FacebookIcon
               width={24}
               height={24}
