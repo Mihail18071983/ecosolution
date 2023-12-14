@@ -37,7 +37,7 @@ export default function Footer() {
             onClick={scrollToTheMain}
             className=" rounded-full flex items-center justify-center  bg-hover-text-color p-2 text-main-text-color transition delay-500 ease-in-out hover:bg-main-text-color hover:text-hover-text-color min-[410px]:order-2"
           >
-            <NorthIcon className="h-4 w-4" />
+            <NorthIcon sx={{width:"16px", height:"16px"}} />
           </button>
           <div className=" flex self-center items-center justify-center gap-2 min-[410px]:order-1 md:ml-[-160px]">
             <FacebookIcon
